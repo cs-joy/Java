@@ -27,3 +27,13 @@ Several asynchronous trigger-based replication packages are available. These rem
 - Londiste, part of SkyTools (developed by Skype)
 - Bucardo multi-master replication (developed by Backcountry.com)
 - SymmetricDS multi-master, multi-tier replication
+
+### Indexes
+PostgreSQL includes built-in support for regular B-tree and hash table indexes, and four index access methods: generalized search trees (GiST), generalized inverted indexes (GIN), Space-Partitioned GiST (SP-GiST)[34] and Block Range Indexes (BRIN). In addition, user-defined index methods can be created, although this is quite an involved process. Indexes in PostgreSQL also support the following features:
+
+Expression indexes can be created with an index of the result of an expression or function, instead of simply the value of a column.
+Partial indexes, which only index part of a table, can be created by adding a WHERE clause to the end of the CREATE INDEX statement. This allows a smaller index to be created.
+The planner is able to use multiple indexes together to satisfy complex queries, using temporary in-memory bitmap index operations (useful for data warehouse applications for joining a large fact table to smaller dimension tables such as those arranged in a star schema).
+k-nearest neighbors (k-NN) indexing (also referred to KNN-GiST) provides efficient searching of "closest values" to that specified, useful to finding similar words, or close objects or locations with geospatial data. This is achieved without exhaustive matching of values.
+Index-only scans often allow the system to fetch data from indexes without ever having to access the main table.
+Block Range Indexes (BRIN).
