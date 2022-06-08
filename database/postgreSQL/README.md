@@ -212,3 +212,34 @@ Matloob Khushi performed benchmarking between PostgreSQL 9.0 and MySQL 5.6.15 fo
 PostgreSQL is available for the following operating systems: Linux (all recent distributions), 64-bit x86 installers available and tested for macOS (OS X) version 10.6 and newer – Windows (with installers available and tested for 64-bit Windows Server 2019 and 2016; some older PostgreSQL versions are tested back to Windows 2008 R2, while for PostgreSQL version 10 and older a 32-bit installer is available and tested down to 32-bit Windows 2008 R1; compilable by e.g. Visual Studio, version 2013 up to the most recent 2019 version) – FreeBSD, OpenBSD, NetBSD, AIX, HP-UX, Solaris, and UnixWare; and not officially tested: DragonFly BSD, BSD/OS, IRIX, OpenIndiana, OpenSolaris, OpenServer, and Tru64 UNIX[citation needed]. Most other Unix-like systems could also work; most modern do support.
 
 PostgreSQL works on any of the following instruction set architectures: x86 and x86-64 on Windows XP (or later) and other operating systems; these are supported on other than Windows: IA-64 Itanium (external support for HP-UX), PowerPC, PowerPC 64, S/390, S/390x, SPARC, SPARC 64, ARMv8-A (64-bit) and older ARM (32-bit, including older such as ARMv6 in Raspberry Pi), MIPS, MIPSel, and PA-RISC. It was also known to work on some other platforms (while not been tested on for years, i.e. for latest versions).
+
+
+## Database administration
+See also: Comparison of database tools
+Open source front-ends and tools for administering PostgreSQL include:
+
+### psql
+The primary front-end for PostgreSQL is the psql command-line program, which can be used to enter SQL queries directly, or execute them from a file. In addition, psql provides a number of meta-commands and various shell-like features to facilitate writing scripts and automating a wide variety of tasks; for example tab completion of object names and SQL syntax.
+### pgAdmin
+The pgAdmin package is a free and open-source graphical user interface (GUI) administration tool for PostgreSQL, which is supported on many computer platforms. The program is available in more than a dozen languages. The first prototype, named pgManager, was written for PostgreSQL 6.3.2 from 1998, and rewritten and released as pgAdmin under the GNU General Public License (GPL) in later months. The second incarnation (named pgAdmin II) was a complete rewrite, first released on January 16, 2002. The third version, pgAdmin III, was originally released under the Artistic License and then released under the same license as PostgreSQL. Unlike prior versions that were written in Visual Basic, pgAdmin III is written in C++, using the wxWidgets framework allowing it to run on most common operating systems. The query tool includes a scripting language called pgScript for supporting admin and development tasks. In December 2014, Dave Page, the pgAdmin project founder and primary developer, announced that with the shift towards web-based models, work has begun on pgAdmin 4 with the aim to facilitate cloud deployments. In 2016, pgAdmin 4 was released. pgAdmin 4 backend was written in Python, using Flask and Qt framework.
+### phpPgAdmin
+phpPgAdmin is a web-based administration tool for PostgreSQL written in PHP and based on the popular phpMyAdmin interface originally written for MySQL administration.
+### PostgreSQL Studio
+PostgreSQL Studio allows users to perform essential PostgreSQL database development tasks from a web-based console. PostgreSQL Studio allows users to work with cloud databases without the need to open firewalls.
+### TeamPostgreSQL
+AJAX/JavaScript-driven web interface for PostgreSQL. Allows browsing, maintaining and creating data and database objects via a web browser. The interface offers tabbed SQL editor with autocompletion, row editing widgets, click-through foreign key navigation between rows and tables, favorites management for commonly used scripts, among other features. Supports SSH for both the web interface and the database connections. Installers are available for Windows, Macintosh, and Linux, and a simple cross-platform archive that runs from a script.
+### LibreOffice, OpenOffice.org
+LibreOffice and OpenOffice.org Base can be used as a front-end for PostgreSQL.
+### pgBadger
+The pgBadger PostgreSQL log analyzer generates detailed reports from a PostgreSQL log file.
+### pgDevOps
+pgDevOps is a suite of web tools to install & manage multiple PostgreSQL versions, extensions, and community components, develop SQL queries, monitor running databases and find performance problems.
+### Adminer
+Adminer is a simple web-based administration tool for PostgreSQL and others, written in PHP.
+### pgBackRest
+pgBackRest is a backup and restore tool for PostgreSQL that provides support for full, differential, and incremental backups.[95]
+### pgaudit
+pgaudit is a PostgreSQL extension that provides detailed session and/or object audit logging via the standard logging facility provided by PostgreSQL.
+### wal-e
+Wal-e is a backup and restore tool for PostgreSQL that provides support for physical (WAL based) backups, written in Python
+A number of companies offer proprietary tools for PostgreSQL. They often consist of a universal core that is adapted for various specific database products. These tools mostly share the administration features with the open source tools but offer improvements in data modeling, importing, exporting or reporting.
