@@ -272,3 +272,17 @@ Notable organizations and products that use PostgreSQL as the primary database i
 - Grofers, an online grocery delivery service.
 - The Guardian migrated from MongoDB to PostgreSQL in 2018.
 - YugabyteDB implements the PostgreSQL query layer as its default SQL mode
+
+## Service implementations
+Some notable vendors offer PostgreSQL as software as a service:
+
+- Heroku, a platform as a service provider, has supported PostgreSQL since the start in 2007. They offer value-add features like full database roll-back (ability to restore a database from any specified time), which is based on - - - WAL-E, open-source software developed by Heroku.
+- In January 2012, EnterpriseDB released a cloud version of both PostgreSQL and their own proprietary Postgres Plus Advanced Server with automated provisioning for failover, replication, load-balancing, and scaling. It runs on Amazon Web Services. Since 2015, Postgres Advanced Server has been offered as ApsaraDB for PPAS, a relational database as a service on Alibaba Cloud.
+- VMware has offered vFabric Postgres (also termed vPostgres) for private clouds on VMware vSphere since May 2012. The company announced End of Availability (EOA) of the product in 2014.
+- In November 2013, Amazon Web Services announced the addition of PostgreSQL to their Relational Database Service offering.
+- In November 2016, Amazon Web Services announced the addition of PostgreSQL compatibility to their cloud-native Amazon Aurora managed database offering.
+- In May 2017, Microsoft Azure announced Azure Databases for PostgreSQL
+- In May 2019, Alibaba Cloud announced PolarDB for PostgreSQL.
+- Jelastic Multicloud Platform as a Service provides container-based PostgreSQL support since 2011. They offer automated asynchronous master-slave replication of PostgreSQL available from marketplace.
+- In June 2019, IBM Cloud announced IBM Cloud Hyper Protect DBaaS for PostgreSQL.
+- In September 2020, Crunchy Data announced Crunchy Bridge.
