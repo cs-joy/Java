@@ -192,3 +192,6 @@ The GSSAPI, SSPI, Kerberos, peer, ident and certificate methods can also use a s
 
 These methods are specified in the cluster's host-based authentication configuration file (pg_hba.conf), which determines what connections are allowed. This allows control over which user can connect to which database, where they can connect from (IP address, IP address range, domain socket), which authentication system will be enforced, and whether the connection must use Transport Layer Security (TLS).
 
+## Standards compliance
+PostgreSQL claims high, but not complete, conformance with the latest SQL standard (for version 13 "in September 2020, PostgreSQL conforms to at least 170 of the 179 mandatory features for SQL:2016 Core conformance", and no other databases fully conformed to it). One exception is the handling of unquoted identifiers like table or column names. In PostgreSQL they are folded, internally, to lower case characters whereas the standard says that unquoted identifiers should be folded to upper case. Thus, Foo should be equivalent to FOO not foo according to the standard. Other shortcomings concern the absence of temporal tables allowing automatic logging of row versions during transactions with the possibility of browsing in time (FOR SYSTEM TIME predicate).[citation needed](https://en.wikipedia.org/wiki/Wikipedia:Citation_needed)
+
