@@ -36,5 +36,13 @@ public class Wise {
            1	1	0
         */
 
+        int right_shift = 106;
+        right_shift >>= 2;
+        System.out.println("right shift= " + right_shift);
+
+        int left_shift = 54;
+        left_shift <<= 3;
+        System.out.println("left shift= " + left_shift);
+
     }
 }
