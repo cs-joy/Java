@@ -88,3 +88,21 @@ New types of almost all objects inside the database can be created, including:
 - Indexes including custom indexes for custom types
 - Operators (existing ones can be overloaded)
 - Procedural languages
+
+### Inheritance
+Tables can be set to inherit their characteristics from a parent table. Data in child tables will appear to exist in the parent tables, unless data is selected from the parent table using the ONLY keyword, i.e. `SELECT * FROM ONLY parent_table;`. Adding a column in the parent table will cause that column to appear in the child table.
+
+Inheritance can be used to implement table partitioning, using either triggers or rules to direct inserts to the parent table into the proper child tables.
+
+As of 2010, this feature is not fully supported yet – in particular, table constraints are not currently inheritable. All check constraints and not-null constraints on a parent table are automatically inherited by its children. Other types of constraints (unique, primary key, and foreign key constraints) are not inherited.
+
+Inheritance provides a way to map the features of generalization hierarchies depicted in entity relationship diagrams (ERDs) directly into the PostgreSQL database.
+
+### Other storage features
+- Referential integrity constraints including foreign key constraints, column constraints, and row checks
+- Binary and textual large-object storage
+- Tablespaces
+- Per-column collation
+- Online backup
+- Point-in-time recovery, implemented using write-ahead logging
+- In-place upgrades with pg_upgrade for less downtime
