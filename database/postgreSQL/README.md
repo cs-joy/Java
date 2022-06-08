@@ -37,3 +37,12 @@ The planner is able to use multiple indexes together to satisfy complex queries,
 k-nearest neighbors (k-NN) indexing (also referred to KNN-GiST) provides efficient searching of "closest values" to that specified, useful to finding similar words, or close objects or locations with geospatial data. This is achieved without exhaustive matching of values.
 Index-only scans often allow the system to fetch data from indexes without ever having to access the main table.
 Block Range Indexes (BRIN).
+
+### Schemas
+In PostgreSQL, a schema holds all objects, except for roles and tablespaces. Schemas effectively act like namespaces, allowing objects of the same name to co-exist in the same database. By default, newly created databases have a schema called public, but any further schemas can be added, and the public schema isn't mandatory.
+
+A search_path setting determines the order in which PostgreSQL checks schemas for unqualified objects (those without a prefixed schema). By default, it is set to $user, public ($user refers to the currently connected database user). This default can be set on a database or role level, but as it is a session parameter, it can be freely changed (even multiple times) during a client session, affecting that session only.
+
+Non-existent schemas listed in search_path are silently skipped during objects lookup.
+
+New objects are created in whichever valid schema (one that presently exists) appears first in the search_path.
