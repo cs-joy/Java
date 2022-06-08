@@ -46,3 +46,33 @@ A search_path setting determines the order in which PostgreSQL checks schemas fo
 Non-existent schemas listed in search_path are silently skipped during objects lookup.
 
 New objects are created in whichever valid schema (one that presently exists) appears first in the search_path.
+
+### Data types
+A wide variety of native data types are supported, including:
+
+- Boolean
+- Arbitrary-precision numerics
+- Character (text, varchar, char)
+- Binary
+- Date/time (timestamp/time with/without time zone, date, interval)
+- Money
+- Enum
+- Bit strings
+- Text search type
+- Composite
+- HStore, an extension enabled key-value store within PostgreSQL
+- Arrays (variable length and can be of any data type, including text and composite types) up to 1 GB in total storage size
+- Geometric primitives
+- IPv4 and IPv6 addresses
+- Classless Inter-Domain Routing (CIDR) blocks and MAC addresses
+- XML supporting XPath queries
+- Universally unique identifier (UUID)
+- JavaScript Object Notation (JSON), and a faster binary JSONB (not the same as BSON)
+
+In addition, users can create their own data types which can usually be made fully indexable via PostgreSQL's indexing infrastructures – GiST, GIN, SP-GiST. Examples of these include the geographic information system (GIS) data types from the PostGIS project for PostgreSQL.
+
+There is also a data type called a domain, which is the same as any other data type but with optional constraints defined by the creator of that domain. This means any data entered into a column using the domain will have to conform to whichever constraints were defined as part of the domain.
+
+A data type that represents a range of data can be used which are called range types. These can be discrete ranges (e.g. all integer values 1 to 10) or continuous ranges (e.g., any time between 10:00 am and 11:00 am). The built-in range types available include ranges of integers, big integers, decimal numbers, time stamps (with and without time zone) and dates.
+
+Custom range types can be created to make new types of ranges available, such as IP address ranges using the inet type as a base, or float ranges using the float data type as a base. Range types support inclusive and exclusive range boundaries using the [/] and (/) characters respectively. (e.g., [4,9) represents all integers starting from and including 4 up to but not including 9.) Range types are also compatible with existing operators used to check for overlap, containment, right of etc.
