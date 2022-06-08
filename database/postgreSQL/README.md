@@ -106,3 +106,65 @@ Inheritance provides a way to map the features of generalization hierarchies dep
 - Online backup
 - Point-in-time recovery, implemented using write-ahead logging
 - In-place upgrades with pg_upgrade for less downtime
+
+
+
+
+
+## Control and connectivity
+### Foreign data wrappers
+PostgreSQL can link to other systems to retrieve data via foreign data wrappers (FDWs).[38] These can take the form of any data source, such as a file system, another relational database management system (RDBMS), or a web service. This means that regular database queries can use these data sources like regular tables, and even join multiple data-sources together.
+
+### Interfaces
+For connecting to applications, PostgreSQL includes the built-in interfaces libpq (the official C application interface) and ECPG (an embedded C system). Third-party libraries for connecting to PostgreSQL are available for many programming languages, including C++,[39] Java,[40] Julia,[41][42][43] Python,[44] Node.js,[45] Go,[46] and Rust.[47]
+
+### Procedural languages
+Procedural languages allow developers to extend the database with custom subroutines (functions), often called stored procedures. These functions can be used to build database triggers (functions invoked on modification of certain data) and custom data types and aggregate functions.[48] Procedural languages can also be invoked without defining a function, using a DO command at SQL level.[49]
+
+Languages are divided into two groups: Procedures written in safe languages are sandboxed and can be safely created and used by any user. Procedures written in unsafe languages can only be created by superusers, because they allow bypassing a database's security restrictions, but can also access sources external to the database. Some languages like Perl provide both safe and unsafe versions.
+
+PostgreSQL has built-in support for three procedural languages:
+
+- Plain SQL (safe). Simpler SQL functions can get expanded inline into the calling (SQL) query, which saves function call overhead and allows the query optimizer to "see inside" the function.
+- Procedural Language/PostgreSQL (PL/pgSQL) (safe), which resembles Oracle's Procedural Language for SQL (PL/SQL) procedural language and SQL/Persistent Stored Modules (SQL/PSM).
+- C (unsafe), which allows loading one or more custom shared library into the database. Functions written in C offer the best performance, but bugs in code can crash and potentially corrupt the database. Most built-in functions are written in C.
+
+In addition, PostgreSQL allows procedural languages to be loaded into the database through extensions. Three language extensions are included with PostgreSQL to support Perl, Tcl, and Python. For Python, discontinued Python 2 is used by default (plpythonu or plpython2u), even in PostgreSQL 14; Python 3 is also supported by choosing the language plpython3u). External projects provide support for many other languages, including PL/Java, JavaScript (PL/V8), PL/Julia PL/R, PL/Ruby, and others.
+
+### Triggers
+Triggers are events triggered by the action of SQL data manipulation language (DML) statements. For example, an INSERT statement might activate a trigger that checks if the values of the statement are valid. Most triggers are only activated by either INSERT or UPDATE statements.
+
+Triggers are fully supported and can be attached to tables. Triggers can be per-column and conditional, in that UPDATE triggers can target specific columns of a table, and triggers can be told to execute under a set of conditions as specified in the trigger's WHERE clause. Triggers can be attached to views by using the INSTEAD OF condition. Multiple triggers are fired in alphabetical order. In addition to calling functions written in the native PL/pgSQL, triggers can also invoke functions written in other languages like PL/Python or PL/Perl.
+
+### Asynchronous notifications
+PostgreSQL provides an asynchronous messaging system that is accessed through the NOTIFY, LISTEN and UNLISTEN commands. A session can issue a NOTIFY command, along with the user-specified channel and an optional payload, to mark a particular event occurring. Other sessions are able to detect these events by issuing a LISTEN command, which can listen to a particular channel. This functionality can be used for a wide variety of purposes, such as letting other sessions know when a table has updated or for separate applications to detect when a particular action has been performed. Such a system prevents the need for continuous polling by applications to see if anything has yet changed, and reducing unnecessary overhead. Notifications are fully transactional, in that messages are not sent until the transaction they were sent from is committed. This eliminates the problem of messages being sent for an action being performed which is then rolled back.
+
+Many connectors for PostgreSQL provide support for this notification system (including libpq, JDBC, Npgsql, psycopg and node.js) so it can be used by external applications.
+
+PostgreSQL can act as an effective, persistent "pub/sub" server or job server by combining LISTEN with FOR UPDATE SKIP LOCKED.[53][54][55]
+
+### Rules
+Rules allow the "query tree" of an incoming query to be rewritten. "Query Re-Write Rules" are attached to a table/class and "Re-Write" the incoming DML (select, insert, update, and/or delete) into one or more queries that either replace the original DML statement or execute in addition to it. Query Re-Write occurs after DML statement parsing, but before query planning.
+
+### Other querying features
+- Transactions
+- Full-text search
+- Views
+  - Materialized views
+  - Updateable views
+  - Recursive views
+- Inner, outer (full, left and right), and cross joins
+- Sub-selects
+  - Correlated sub-queries
+- Regular expressions
+- common table expressions and writable common table expressions
+- Encrypted connections via Transport Layer Security (TLS); current versions do not use vulnerable SSL, even with that configuration option
+- Domains
+- Savepoints
+- Two-phase commit
+
+The Oversized-Attribute Storage Technique (TOAST) is used to transparently store large table attributes (such as big MIME attachments or XML messages) in a separate area, with automatic compression.
+Embedded SQL is implemented using preprocessor. SQL code is first written embedded into C code. Then code is run through ECPG preprocessor, which replaces SQL with calls to code library. Then code can be compiled using a C compiler. Embedding works also with C++ but it does not recognize all C++ constructs.
+
+### Concurrency model
+PostgreSQL server is process-based (not threaded), and uses one operating system process per database session. Multiple sessions are automatically spread across all available CPUs by the operating system. Many types of queries can also be parallelized across multiple background worker processes, taking advantage of multiple CPUs or cores.[62] Client applications can use threads and create multiple database connections from each thread.[63]
