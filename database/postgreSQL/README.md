@@ -76,3 +76,15 @@ There is also a data type called a domain, which is the same as any other data t
 A data type that represents a range of data can be used which are called range types. These can be discrete ranges (e.g. all integer values 1 to 10) or continuous ranges (e.g., any time between 10:00 am and 11:00 am). The built-in range types available include ranges of integers, big integers, decimal numbers, time stamps (with and without time zone) and dates.
 
 Custom range types can be created to make new types of ranges available, such as IP address ranges using the inet type as a base, or float ranges using the float data type as a base. Range types support inclusive and exclusive range boundaries using the [/] and (/) characters respectively. (e.g., [4,9) represents all integers starting from and including 4 up to but not including 9.) Range types are also compatible with existing operators used to check for overlap, containment, right of etc.
+
+### User-defined objects
+New types of almost all objects inside the database can be created, including:
+
+- Casts
+- Conversions
+- Data types
+- Data domains
+- Functions, including aggregate functions and window functions
+- Indexes including custom indexes for custom types
+- Operators (existing ones can be overloaded)
+- Procedural languages
