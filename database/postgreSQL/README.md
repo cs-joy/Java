@@ -243,3 +243,32 @@ pgaudit is a PostgreSQL extension that provides detailed session and/or object a
 ### wal-e
 Wal-e is a backup and restore tool for PostgreSQL that provides support for physical (WAL based) backups, written in Python
 A number of companies offer proprietary tools for PostgreSQL. They often consist of a universal core that is adapted for various specific database products. These tools mostly share the administration features with the open source tools but offer improvements in data modeling, importing, exporting or reporting.
+
+## Notable users
+Notable organizations and products that use PostgreSQL as the primary database include:
+
+- Microsoft, used for a petabyte-scale “Release Quality View” (RQV) analytics dashboard, which tracks quality of Windows updates analyzing 20K types of metrics from over 800M Windows devices.
+- In 2009, the social-networking website Myspace used Aster Data Systems's nCluster database for data warehousing, which was built on unmodified PostgreSQL.
+- Geni.com uses PostgreSQL for their main genealogy database.
+- OpenStreetMap, a collaborative project to create a free editable map of the world.
+- Afilias, domain registries for .org, .info and others.
+- Sony Online multiplayer online games.
+- BASF, shopping platform for their agribusiness portal.
+- Reddit social news website.
+- Skype VoIP application, central business databases.
+- Sun xVM, Sun's virtualization and datacenter automation suite.
+- MusicBrainz, open online music encyclopedia.
+- The International Space Station – to collect telemetry data in orbit and replicate it to the ground.
+- MyYearbook social-networking site.
+- Instagram, a mobile photo-sharing service.
+- Disqus, an online discussion and commenting service.
+- TripAdvisor, travel-information website of mostly user-generated content.
+- Yandex, a Russian internet company switched its Yandex.Mail service from Oracle to Postgres.
+- Amazon Redshift, part of AWS, a columnar online analytical processing (OLAP) system based on ParAccel's Postgres modifications.
+- National Oceanic and Atmospheric Administration's (NOAA) National Weather Service (NWS), Interactive Forecast Preparation System (IFPS), a system that integrates data from the NEXRAD weather radars, surface, and hydrology systems to build detailed localized forecast models.
+- United Kingdom's national weather service, Met Office, has begun swapping Oracle for PostgreSQL in a strategy to deploy more open source technology.
+- WhitePages.com had been using Oracle and MySQL, but when it came to moving its core directories in-house, it turned to PostgreSQL. Because WhitePages.com needs to combine large sets of data from multiple sources, PostgreSQL's ability to load and index data at high rates was a key to its decision to use PostgreSQL.
+- FlightAware, a flight tracking website.
+- Grofers, an online grocery delivery service.
+- The Guardian migrated from MongoDB to PostgreSQL in 2018.
+- YugabyteDB implements the PostgreSQL query layer as its default SQL mode
