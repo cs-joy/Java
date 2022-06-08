@@ -286,3 +286,5 @@ Some notable vendors offer PostgreSQL as software as a service:
 - Jelastic Multicloud Platform as a Service provides container-based PostgreSQL support since 2011. They offer automated asynchronous master-slave replication of PostgreSQL available from marketplace.
 - In June 2019, IBM Cloud announced IBM Cloud Hyper Protect DBaaS for PostgreSQL.
 - In September 2020, Crunchy Data announced Crunchy Bridge.
+
+[ref](https://www.postgresql.org/docs/current/)
