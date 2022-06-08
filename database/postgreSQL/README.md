@@ -167,4 +167,28 @@ The Oversized-Attribute Storage Technique (TOAST) is used to transparently store
 Embedded SQL is implemented using preprocessor. SQL code is first written embedded into C code. Then code is run through ECPG preprocessor, which replaces SQL with calls to code library. Then code can be compiled using a C compiler. Embedding works also with C++ but it does not recognize all C++ constructs.
 
 ### Concurrency model
-PostgreSQL server is process-based (not threaded), and uses one operating system process per database session. Multiple sessions are automatically spread across all available CPUs by the operating system. Many types of queries can also be parallelized across multiple background worker processes, taking advantage of multiple CPUs or cores.[62] Client applications can use threads and create multiple database connections from each thread.[63]
+PostgreSQL server is process-based (not threaded), and uses one operating system process per database session. Multiple sessions are automatically spread across all available CPUs by the operating system. Many types of queries can also be parallelized across multiple background worker processes, taking advantage of multiple CPUs or cores. Client applications can use threads and create multiple database connections from each thread.
+
+## Security
+PostgreSQL manages its internal security on a per-role basis. A role is generally regarded to be a user (a role that can log in), or a group (a role of which other roles are members). Permissions can be granted or revoked on any object down to the column level, and can also allow/prevent the creation of new objects at the database, schema or table levels.
+
+PostgreSQL's SECURITY LABEL feature (extension to SQL standards), allows for additional security; with a bundled loadable module that supports label-based mandatory access control (MAC) based on Security-Enhanced Linux (SELinux) security policy.
+
+PostgreSQL natively supports a broad number of external authentication mechanisms, including:
+
+- Password: either SCRAM-SHA-256 (since PostgreSQL 10), MD5 or plain-text
+- Generic Security Services Application Program Interface (GSSAPI)
+- Security Support Provider Interface (SSPI)
+- Kerberos
+- ident (maps O/S user-name as provided by an ident server to database user-name)
+- Peer (maps local user name to database user name)
+- Lightweight Directory Access Protocol (LDAP)
+  - Active Directory (AD)
+- RADIUS
+- Certificate
+- Pluggable authentication module (PAM)
+
+The GSSAPI, SSPI, Kerberos, peer, ident and certificate methods can also use a specified "map" file that lists which users matched by that authentication system are allowed to connect as a specific database user.
+
+These methods are specified in the cluster's host-based authentication configuration file (pg_hba.conf), which determines what connections are allowed. This allows control over which user can connect to which database, where they can connect from (IP address, IP address range, domain socket), which authentication system will be enforced, and whether the connection must use Transport Layer Security (TLS).
+
