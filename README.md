@@ -10,3 +10,13 @@ Java was originally developed by James Gosling at Sun Microsystems and released 
 As of March 2022, Java 18 is the latest version, while Java 17, 11 and 8 are the current long-term support (LTS) versions. Oracle released the last zero-cost public update for the legacy version Java 8 LTS in January 2019 for commercial use, although it will otherwise still support Java 8 with public updates for personal use indefinitely. Other vendors have begun to offer zero-cost builds of OpenJDK 8 and 11 that are still receiving security and other upgrades.
 
 Oracle (and others) highly recommend uninstalling outdated and unsupported versions of Java, due to unresolved security issues in older versions.[22] Oracle advises its users to immediately transition to a supported version, such as one of the LTS versions (8, 11, 17).
+
+
+## Principles
+There were five primary goals in the creation of the Java language:
+
+- It must be simple, object-oriented, and familiar.
+- It must be robust and secure.
+- It must be architecture-neutral and portable.
+- It must execute with high performance.
+- It must be interpreted, threaded, and dynamic.
