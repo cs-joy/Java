@@ -21,6 +21,13 @@ There were five primary goals in the creation of the Java language:
 - It must execute with high performance.
 - It must be interpreted, threaded, and dynamic.
 
+## Syntax
+The syntax of Java is largely influenced by C++ and C. Unlike C++, which combines the syntax for structured, generic, and object-oriented programming, Java was built almost exclusively as an object-oriented language. All code is written inside classes, and every data item is an object, with the exception of the primitive data types, (i.e. integers, floating-point numbers, boolean values, and characters), which are not objects for performance reasons. Java reuses some popular aspects of C++ (such as the printf method).
+
+Unlike C++, Java does not support operator overloading[56] or multiple inheritance for classes, though multiple inheritance is supported for interfaces.
+
+Java uses comments similar to those of C++. There are three different styles of comments: a single line style marked with two slashes (//), a multiple line style opened with /* and closed with */, and the Javadoc commenting style opened with /** and closed with */. The Javadoc style of commenting allows the user to run the Javadoc executable to create documentation for the program and can be read by some integrated development environments (IDEs) such as Eclipse to allow developers to access documentation within the IDE.
+
 ### Hello world example
 The traditional Hello world program can be written in Java as:
 ```java
