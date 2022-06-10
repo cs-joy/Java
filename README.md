@@ -21,6 +21,19 @@ There were five primary goals in the creation of the Java language:
 - It must execute with high performance.
 - It must be interpreted, threaded, and dynamic.
 
+## Editions
+
+Sun has defined and supports four editions of Java targeting different application environments and segmented many of its APIs so that they belong to one of the platforms. The platforms are:
+
+- Java Card for smart-cards.
+- Java Platform, Micro Edition (Java ME) – targeting environments with limited resources.
+- Java Platform, Standard Edition (Java SE) – targeting workstation environments.
+- Java Platform, Enterprise Edition (Java EE) – targeting large distributed enterprise or Internet environments.
+
+The classes in the Java APIs are organized into separate groups called packages. Each package contains a set of related interfaces, classes, subpackages and exceptions.
+
+Sun also provided an edition called Personal Java that has been superseded by later, standards-based Java ME configuration-profile pairings.
+
 ## Execution system
 ### Java JVM and bytecode
 Main articles: [Java (software platform)](https://en.wikipedia.org/wiki/Java_(software_platform)) and [Java virtual machine](https://en.wikipedia.org/wiki/Java_virtual_machine)
@@ -214,3 +227,5 @@ Android does not provide the full Java SE standard library, although the Android
 
 ### Controversy
 The use of Java-related technology in Android led to a legal dispute between Oracle and Google. On May 7, 2012, a San Francisco jury found that if APIs could be copyrighted, then Google had infringed Oracle's copyrights by the use of Java in Android devices. District Judge William Alsup ruled on May 31, 2012, that APIs cannot be copyrighted, but this was reversed by the United States Court of Appeals for the Federal Circuit in May 2014. On May 26, 2016, the district court decided in favor of Google, ruling the copyright infringement of the Java API in Android constitutes fair use.In March 2018, this ruling was overturned by the Appeals Court, which sent down the case of determining the damages to federal court in San Francisco. Google filed a petition for writ of certiorari with the Supreme Court of the United States in January 2019 to challenge the two rulings that were made by the Appeals Court in Oracle's favor. On April 5, 2021, the Court ruled 6-2 in Google's favor, that its use of Java APIs should be considered fair use. However, the court refused to rule on the copyrightability of APIs, choosing instead to determine their ruling by considering Java's API copyrightable "purely for argument’s sake.
+
+[Source](https://en.wikipedia.org/wiki/Java_(programming_language))
