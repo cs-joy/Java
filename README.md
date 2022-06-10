@@ -21,6 +21,60 @@ There were five primary goals in the creation of the Java language:
 - It must execute with high performance.
 - It must be interpreted, threaded, and dynamic.
 
+### Example with methods
+```java
+// This is an example of a single line comment using two slashes
+
+/*
+ * This is an example of a multiple line comment using the slash and asterisk.
+ * This type of comment can be used to hold a lot of information or deactivate
+ * code, but it is very important to remember to close the comment.
+ */
+
+package fibsandlies;
+
+import java.util.Map;
+import java.util.HashMap;
+
+/**
+ * This is an example of a Javadoc comment; Javadoc can compile documentation
+ * from this text. Javadoc comments must immediately precede the class, method,
+ * or field being documented.
+ * @author Wikipedia Volunteers
+ */
+public class FibCalculator extends Fibonacci implements Calculator {
+    private static Map<Integer, Integer> memoized = new HashMap<>();
+
+    /*
+     * The main method written as follows is used by the JVM as a starting point
+     * for the program.
+     */
+    public static void main(String[] args) {
+        memoized.put(1, 1);
+        memoized.put(2, 1);
+        System.out.println(fibonacci(12)); // Get the 12th Fibonacci number and print to console
+    }
+
+    /**
+     * An example of a method written in Java, wrapped in a class.
+     * Given a non-negative number FIBINDEX, returns
+     * the Nth Fibonacci number, where N equals FIBINDEX.
+     * 
+     * @param fibIndex The index of the Fibonacci number
+     * @return the Fibonacci number
+     */
+    public static int fibonacci(int fibIndex) {
+        if (memoized.containsKey(fibIndex)) {
+            return memoized.get(fibIndex);
+        }
+
+        int answer = fibonacci(fibIndex - 1) + fibonacci(fibIndex - 2);
+        memoized.put(fibIndex, answer);
+        return answer;
+    }
+}
+```
+
 ## Special classes
 
 ### Applet
@@ -33,6 +87,7 @@ The Java servlet API has to some extent been superseded (but still used under th
 
 - the Java API for RESTful Web Services (JAX-RS 2.0) useful for AJAX, JSON and REST services, and
 - the Java API for XML Web Services (JAX-WS) useful for SOAP Web Services.
+
 Typical implementations of these APIs on Application Servers or Servlet Containers use a standard servlet for handling all interactions with the HTTP requests and responses that delegate to the web service methods for the actual business logic.
 
 ### JavaServer Pages
