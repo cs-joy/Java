@@ -21,6 +21,37 @@ There were five primary goals in the creation of the Java language:
 - It must execute with high performance.
 - It must be interpreted, threaded, and dynamic.
 
+## Class libraries
+The Java Class Library is the standard library, developed to support application development in Java. It is controlled by Oracle in cooperation with others through the Java Community Process program.[71] Companies or individuals participating in this process can influence the design and development of the APIs. This process has been a subject of controversy during the 2010s.[72] The class library contains features such as:
+
+- The core libraries, which include:
+  - IO/NIO
+  - Networking (NOTE: new HTTP Client since Java 11)
+  - Reflection
+  - Concurrency
+  - Generics
+  - Scripting/Compiler
+  - Functional programming (Lambda, Streaming)
+  - Collection libraries that implement data structures such as lists, dictionaries, trees, sets, queues and double-ended queue, or stacks
+  - XML Processing (Parsing, Transforming, Validating) libraries
+  - Security
+  - Internationalization and localization libraries[75]
+- The integration libraries, which allow the application writer to communicate with external systems. These libraries include:
+  - The Java Database Connectivity (JDBC) API for database access
+  - Java Naming and Directory Interface (JNDI) for lookup and discovery
+  - RMI and CORBA for distributed application development
+  - JMX for managing and monitoring applications
+- User interface libraries, which include:
+  - The (heavyweight, or native) Abstract Window Toolkit (AWT), which provides GUI components, the means for laying out those components and the means for handling events from those components
+  - The (lightweight) Swing libraries, which are built on AWT but provide (non-native) implementations of the AWT widgetry
+  - APIs for audio capture, processing, and playback
+  - JavaFX
+- A platform dependent implementation of the Java virtual machine that is the means by which the bytecodes of the Java libraries and third party applications are executed
+- Plugins, which enable applets to be run in web browsers
+- Java Web Start, which allows Java applications to be efficiently distributed to end users across the Internet
+- Licensing and documentation
+
+
 ## Use outside the Java platform
 The Java programming language requires the presence of a software platform in order for compiled programs to be executed.
 
