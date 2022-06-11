@@ -2,6 +2,7 @@
     "java.project.sourcePaths": [
         "documentation/operators",
         "documentation/intro",
-        "berfest"
+        "berfest",
+        "RESTapi"
     ]
 }
