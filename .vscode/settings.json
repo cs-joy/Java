@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "documentation/operators",
-        "documentation/intro"
+        "documentation/intro",
+        "berfest"
     ]
 }
